@@ -1,0 +1,125 @@
+/* unidades de medida
+px = absoluta 
+%, fr = relativas
+
+rem y em
+
+16px
+1rem = 16px
+
+1em = al tama;o que este declarado en el contenedor
+*/
+
+
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+
+body{
+    background-color: #0e0d0d;
+}
+
+/* estilos para pantallas de celulares */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    
+    
+}
+
+header nav ul li{
+    color: whitesmoke;
+    
+
+}
+
+/* estilos de main */
+
+
+.contenedor .img-dos, .img-cinco{
+    display: none;
+}
+
+.contenedor div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor{
+    padding: 2rem;
+    height: 60vh;
+    margin: 1rem 3rem 5rem 3rem;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+    row-gap: 1rem;
+}
+
+
+/* estilos de footer */
+footer{
+    margin-top: 1rem;
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+/* estilos para tablet */
+
+/* mq de tabler */
+
+@media screen and (min-width:600px){
+    .contenedor{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2fr, 50%);
+        column-gap: 1rem;
+    }
+
+    .contenedor .img-cuatro{
+        grid-column: span 2;
+    }
+}
+
+/* estilos para desktop */
+/* mq de desktop */
+
+@media screen and (min-width:1024px){
+    .contenedor .img-dos, .img-cinco{
+        display: block;
+    }
+    
+    .contenedor{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    .contenedor .img-uno, .img-tres{
+        grid-row: span 2;
+    }
+
+    .contenedor .img-cuatro{
+        grid-column: span 1;
+    }
+
+    .contenedor .img-cinco{
+        grid-column: span 3;
+    }
+    
+}
